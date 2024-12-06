@@ -31,7 +31,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.MecanumWheels;
+
 /*
  * This OpMode scans a single servo back and forward until Stop is pressed.
  * The code is structured as a LinearOpMode
@@ -48,16 +48,16 @@ import org.firstinspires.ftc.teamcode.MecanumWheels;
  */
 @TeleOp(name = "Concept: Mechanum Wheels", group = "Concept")
 public class TeleOpMode extends LinearOpMode {
-    private MecanumWheels mecanumWeels;
+    private MecanumWheels mecanumWheels;
 
 
     @Override
     public void runOpMode() {
 
-        mecanumWeels = new MecanumWheels(this);
+        mecanumWheels = new MecanumWheels(this);
         waitForStart();
         while(opModeIsActive()){
-            mecanumWeels.move();
+            mecanumWheels.move();
             idle();
 
         }

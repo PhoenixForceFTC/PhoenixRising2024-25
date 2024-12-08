@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 @TeleOp(name = "Concept: Arm", group = "Concept")
 public class ConceptArm extends LinearOpMode {
 
-    static final double COUNTS_PER_MOTOR_REV = 537.7; // Set this to match your motor
+    static final double COUNTS_PER_MOTOR_REV = 3895.9; // setting for 43 RPM motor
     static final int CYCLE_MS = 50; // period of each cycle, set to 50 milliseconds
     DcMotor motor;
     int targetPosition = 0; // To store the current target position
@@ -30,7 +30,7 @@ public class ConceptArm extends LinearOpMode {
         motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         motor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        motor.setTargetPosition(500);
+
 
         // Define the target positions in encoder counts
         double targetRotationLowBasket = 0.45; // Set appropriately
@@ -51,17 +51,18 @@ public class ConceptArm extends LinearOpMode {
             // Check if the motor is not moving or the target position has changed
             if (!motor.isBusy() || motor.getTargetPosition() != targetPosition) {
                 motor.setTargetPosition(targetPosition);
-                motor.setPower(1.0); // Move to the target position
+                motor.setPower(1); // Move to the target position
             }
 
             // Stop the motor once it has reached the target position
             if (!motor.isBusy()) {
-                motor.setPower(0); // Stop the motor
+                motor.setPower(0.2); // Stop the motor
             }
 
             // Display data for debugging
             telemetry.addData("Target Position", targetPosition);
             telemetry.addData("Current Position", motor.getCurrentPosition());
+            telemetry.addData("Motor Power", motor.getPower());
             telemetry.update();
 
             sleep(CYCLE_MS); // Pause for 50 milliseconds

@@ -37,7 +37,7 @@ public class ConceptArm extends LinearOpMode {
         double targetRotationSpecimen = 0.45;  // Set appropriately
         double targetPickUp = 0.72;            // Set appropriately
         double targetZero = 0;
-        double targetEnter = 0.55;
+        double targetEnter = 0.6;
 
         // Main loop
         while (opModeIsActive()) {

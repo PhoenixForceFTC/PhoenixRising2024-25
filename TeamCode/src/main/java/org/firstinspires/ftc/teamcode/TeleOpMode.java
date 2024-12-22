@@ -67,7 +67,7 @@ public class TeleOpMode extends LinearOpMode {
     double position = (MAX_POS - MIN_POS) / 2; // Start at halfway position for wrist joint
     double power = 0; // power for active intake
 
-    static final double INCREMENT = 0.02;     // amount to slew wrist joint each CYCLE_MS cycle
+    static final double INCREMENT = 0.03;     // amount to slew wrist joint each CYCLE_MS cycle
     static final double MAX_POS = 1;     // Maximum rotational position (wrist joint)
     static final double MIN_POS = 0;       // Minimum rotational position (wrist joint)
 
